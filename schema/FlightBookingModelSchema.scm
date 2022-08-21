@@ -1,4 +1,4 @@
-/* JADE COMMAND FILE NAME O:\SIT LABS AND ACTIVITIES\606\606-jade-project\schema\FlightBookingModelSchema.jcf */
+/* JADE COMMAND FILE NAME FlightBookingModelSchema.jcf */
 jadeVersionNumber "20.0.02";
 schemaDefinition
 FlightBookingModelSchema subschemaOf RootSchema completeDefinition, patchVersioningEnabled = false;
@@ -30,12 +30,12 @@ typeDefinitions
 	(
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:08:21:22:32:35.026;
 	attributeDefinitions
-		airportCode:                   String[4] number = 2, ordinal = 2;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:08:21:22:45:19.597;
-		cityCode:                      String[4] number = 3, ordinal = 4;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:08:21:22:45:29.475;
-		cityName:                      String[31] number = 1, ordinal = 3;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:08:21:22:45:38.129;
+		airportCode:                   String[4] readonly, number = 2, ordinal = 2;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:08:21:23:15:25.142;
+		cityCode:                      String[4] readonly, number = 3, ordinal = 4;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:08:21:23:15:21.970;
+		cityName:                      String[31] readonly, number = 1, ordinal = 3;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:08:21:23:15:18.017;
 	)
 	Application completeDefinition
 	(
@@ -51,31 +51,31 @@ typeDefinitions
 	(
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:08:21:22:35:33.047;
 	attributeDefinitions
-		date:                          Date number = 3, ordinal = 3;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:08:21:22:39:54.294;
-		flightstatus:                  String[31] number = 6, ordinal = 6;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:08:21:22:43:44.532;
-		id:                            String[31] number = 1, ordinal = 1;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:08:21:22:38:49.069;
-		time:                          Time number = 2, ordinal = 2;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:08:21:22:39:25.476;
+		date:                          Date readonly, number = 3, ordinal = 3;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:08:21:23:15:13.548;
+		flightstatus:                  String[31] readonly, number = 6, ordinal = 6;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:08:21:23:15:05.360;
+		id:                            String[31] readonly, number = 1, ordinal = 1;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:08:21:23:15:01.016;
+		time:                          Time readonly, number = 2, ordinal = 2;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:08:21:23:14:52.469;
 	referenceDefinitions
-		flightPath:                    FlightPath  number = 5, ordinal = 5;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:08:21:22:45:06.159;
-		plane:                         Plane  number = 4, ordinal = 4;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:08:21:22:41:21.543;
+		flightPath:                    FlightPath  readonly, number = 5, ordinal = 5;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:08:21:23:15:09.602;
+		plane:                         Plane  readonly, number = 4, ordinal = 4;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:08:21:23:14:56.532;
 	)
 	FlightPath completeDefinition
 	(
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:08:21:22:44:48.487;
 	attributeDefinitions
-		id:                            String[31] number = 1, ordinal = 1;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:08:21:22:36:30.373;
+		id:                            String[31] readonly, number = 1, ordinal = 1;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:08:21:23:14:27.405;
 	referenceDefinitions
-		arrivalAirport:                Airport  number = 2, ordinal = 4;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:08:21:22:44:20.345;
-		departureAirport:              Airport  number = 3, ordinal = 5;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:08:21:22:44:12.111;
+		arrivalAirport:                Airport  readonly, number = 2, ordinal = 4;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:08:21:23:14:40.391;
+		departureAirport:              Airport  readonly, number = 3, ordinal = 5;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:08:21:23:14:35.047;
 	)
 	Global completeDefinition
 	(
