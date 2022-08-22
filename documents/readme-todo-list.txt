@@ -1,8 +1,8 @@
 todo:
 
-cody: ticket class, plane class and attributes
+cody: ticket class and attributes
 
-quintin: airport class and attributes
+quintin: 
 
 daniel: idk
 
@@ -10,8 +10,8 @@ daniel: idk
 
 completed:
 
-cody:
+cody: plane class and attributes
 
-quintin:
+quintin: airport, flight, flightpath classes and attributes
 
-daniel: passenger class and attributes
+daniel: passenger class and attributes, basic frontend gui forms for guest, manager, admin, login pages
