@@ -1,7 +1,7 @@
-﻿JadeVersionNumber 20.0.02
+JadeVersionNumber 20.0.02
 JadePatchNumber 0
 Platform WindowsNT 10.0 
-Encoding UnicodeUTF8 
+Encoding ANSI 
 Version 7/20.0.02 
 Schema FlightBookingModelSchema CompleteDefinition
 Locales 1033 

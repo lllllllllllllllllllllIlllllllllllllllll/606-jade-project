@@ -1,4 +1,4 @@
-/* JADE COMMAND FILE NAME O:\SIT LABS AND ACTIVITIES\606\606-jade-project\schema\FlightBookingViewSchema.jcf */
+/* JADE COMMAND FILE NAME H:\Docs\606-jade-project\schema\FlightBookingViewSchema.jcf */
 jadeVersionNumber "20.0.02";
 schemaDefinition
 FlightBookingViewSchema subschemaOf FlightBookingModelSchema completeDefinition, patchVersioningEnabled = false;
@@ -121,7 +121,7 @@ typeDefinitions
 	)
 	FormLogin completeDefinition
 	(
-		setModifiedTimeStamp "user" "20.0.02" 2022:08:22:22:45:13.401;
+		setModifiedTimeStamp "2013000918" "20.0.02" 2022:11:01:20:28:42.528;
 	referenceDefinitions
 		buttonLogin:                   Button  number = 2, ordinal = 2;
 		setModifiedTimeStamp "user" "20.0.02" 2022:08:22:22:43:10.066;
