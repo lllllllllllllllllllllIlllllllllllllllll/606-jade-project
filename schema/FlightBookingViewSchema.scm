@@ -1,4 +1,4 @@
-/* JADE COMMAND FILE NAME H:\Docs\606-jade-project\schema\FlightBookingViewSchema.jcf */
+/* JADE COMMAND FILE NAME O:\SIT LABS AND ACTIVITIES\606\606-jade-project\schema\FlightBookingViewSchema.jcf */
 jadeVersionNumber "20.0.02";
 schemaDefinition
 FlightBookingViewSchema subschemaOf FlightBookingModelSchema completeDefinition, patchVersioningEnabled = false;
@@ -14,9 +14,10 @@ typeHeaders
 	GFlightBookingViewSchema subclassOf GFlightBookingModelSchema transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2069;
 	SFlightBookingViewSchema subclassOf SFlightBookingModelSchema transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2070;
 	FormAdmin subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 9, number = 2072;
-	FormGuest subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 9, number = 2074;
+	FormGuest subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 12, number = 2074;
 	FormLogin subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 7, number = 2071;
-	FormManager subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 9, number = 2073;
+	FormManager subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 15, number = 2073;
+	Menu subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 7, number = 2095;
  
 membershipDefinitions
  
@@ -98,7 +99,7 @@ typeDefinitions
 	)
 	FormGuest completeDefinition
 	(
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:32:34.634;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:35:27.959;
 	referenceDefinitions
 		btnCancel:                     Button  number = 2, ordinal = 2;
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:32:34.631;
@@ -108,16 +109,31 @@ typeDefinitions
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:32:34.633;
 		flightPathTextBox:             TextBox  number = 8, ordinal = 8;
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:32:34.633;
-		flightstatuslistBox2:          ListBox  number = 4, ordinal = 4;
+		flightstatuslistBox2:          ListBox  number = 7, ordinal = 4;
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:32:34.632;
-		idTextBox:                     TextBox  number = 7, ordinal = 7;
+		idTextBox:                     TextBox  number = 10, ordinal = 7;
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:32:34.633;
 		labelGuest:                    Label  number = 1, ordinal = 1;
 		setModifiedTimeStamp "user" "20.0.02" 2022:08:22:22:45:12.369;
-		planeTextbox:                  TextBox  number = 6, ordinal = 6;
+		planeTextbox:                  TextBox  number = 11, ordinal = 6;
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:32:34.632;
-		timeTextbox:                   TextBox  number = 5, ordinal = 5;
+		timeTextbox:                   TextBox  number = 12, ordinal = 5;
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:32:34.632;
+ 
+	jadeMethodDefinitions
+		btnOk_click(btn: Button input) updating, number = 1002;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:13:27.677;
+		flightTable_displayRow(
+			table: Table input; 
+			theSheet: Integer; 
+			obj: Object; 
+			theRow: Integer; 
+			bcontinue: Boolean io): String updating, number = 1001;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:12:21.441;
+ 
+	eventMethodMappings
+		btnOk_click = click of Button;
+		flightTable_displayRow = displayRow of Table;
 	)
 	FormLogin completeDefinition
 	(
@@ -150,26 +166,45 @@ typeDefinitions
 	)
 	FormManager completeDefinition
 	(
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:32:40.170;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:35:27.959;
 	referenceDefinitions
 		btnCancel:                     Button  number = 9, ordinal = 9;
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:27:14.141;
 		btnOk:                         Button  number = 8, ordinal = 8;
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:27:14.141;
-		dateTextBox:                   TextBox  number = 2, ordinal = 2;
+		dateTextBox:                   TextBox  number = 10, ordinal = 2;
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:27:14.141;
-		flightPathTextBox:             TextBox  number = 3, ordinal = 3;
+		flightPathTextBox:             TextBox  number = 11, ordinal = 3;
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:27:14.141;
-		flightstatuslistBox2:          ListBox  number = 7, ordinal = 7;
+		flightstatuslistBox2:          ListBox  number = 12, ordinal = 7;
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:27:14.141;
-		idTextBox:                     TextBox  number = 4, ordinal = 4;
+		idTextBox:                     TextBox  number = 13, ordinal = 4;
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:27:14.141;
 		labelManager:                  Label  number = 1, ordinal = 1;
 		setModifiedTimeStamp "user" "20.0.02" 2022:08:22:22:45:12.645;
-		planeTextbox:                  TextBox  number = 5, ordinal = 5;
+		planeTextbox:                  TextBox  number = 14, ordinal = 5;
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:27:14.141;
-		timeTextbox:                   TextBox  number = 6, ordinal = 6;
+		timeTextbox:                   TextBox  number = 15, ordinal = 6;
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:27:14.141;
+	)
+	Menu completeDefinition
+	(
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
+	referenceDefinitions
+		mnAccntLogin:                  MenuItem  number = 6, ordinal = 6;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
+		mnuAccount:                    MenuItem  number = 5, ordinal = 5;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
+		mnuBooking:                    MenuItem  number = 1, ordinal = 1;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
+		mnuManagerBooking:             MenuItem  number = 3, ordinal = 3;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
+		mnuacctLogout:                 MenuItem  number = 7, ordinal = 7;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
+		mnuadminbooking:               MenuItem  number = 4, ordinal = 4;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
+		mnuguestbooking:               MenuItem  number = 2, ordinal = 2;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
 	)
  
 inverseDefinitions
@@ -178,7 +213,7 @@ FlightBookingViewSchemaDb
 	(
 		setModifiedTimeStamp "user" "20.0.02" 2022:08:22:22:36:36.479;
 	databaseFileDefinitions
-		"jademasters-airline" number = 52;
+		"jademasters-airline" number = 54;
 		setModifiedTimeStamp "user" "20.0.02" 2022:08:17:22:54:09.249;
 	defaultFileDefinition "jademasters-airline";
 	classMapDefinitions
@@ -189,6 +224,34 @@ FlightBookingViewSchemaDb
 schemaViewDefinitions
 exportedPackageDefinitions
 typeSources
+	FormGuest (
+	jadeMethodSources
+btnOk_click
+{
+btnOk_click(btn: Button input) updating;
+
+vars
+
+begin
+	self.unload;
+end;
+
+}
+
+flightTable_displayRow
+{
+flightTable_displayRow(table: Table input; theSheet: Integer; obj: Object; theRow: Integer; bcontinue: Boolean io):String updating;
+
+vars
+	fly : Flight;
+begin
+	fly := obj.Flight;
+	return fly.flightPath.String & Tab & fly.date.String & Tab & fly.flightstatus.String & Tab & fly.plane.String & Tab & fly.time.String;
+end;
+
+}
+
+	)
 	FormLogin (
 	jadeMethodSources
 buttonLogin_click
