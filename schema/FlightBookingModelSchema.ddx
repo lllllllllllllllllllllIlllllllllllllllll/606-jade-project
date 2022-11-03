@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<schema name="FlightBookingModelSchema" JadeVersionNumber="22.0.01" JadePatchNumber="0" CompleteDefinition="true">
+	<Application name="FlightBookingModelSchema">
+		<__overridePatchNumber>0</__overridePatchNumber>
+		<__patchControlString/>
+		<_aboutFormName/>
+		<_defaultLocaleId>0</_defaultLocaleId>
+		<_modifiedBy>user</_modifiedBy>
+		<_modifiedTimestamp>2022:08:17:22:54:09.253</_modifiedTimestamp>
+		<_patchVersion>0</_patchVersion>
+		<_startupFormName/>
+		<_systemVersion>20.0.02</_systemVersion>
+		<aboutForm/>
+		<appVersion/>
+		<applicationType>G</applicationType>
+		<controlSpacing>4</controlSpacing>
+		<defaultApp>true</defaultApp>
+		<defaultMdi>false</defaultMdi>
+		<finalizeMethod/>
+		<fontBold>false</fontBold>
+		<fontName>Tahoma</fontName>
+		<fontSize>8.25</fontSize>
+		<formMargin>7</formMargin>
+		<heightSingleLineControl>14</heightSingleLineControl>
+		<helpFile/>
+		<icon/>
+		<initializeMethod/>
+		<mdiStyle>0</mdiStyle>
+		<mdiWindowListOrder>0</mdiWindowListOrder>
+		<name>FlightBookingModelSchema</name>
+		<showBubbleHelp>false</showBubbleHelp>
+		<startupForm/>
+		<useBorderStyleOnly>false</useBorderStyleOnly>
+		<webMinimumResponseTime>0</webMinimumResponseTime>
+		<threeDControls>
+			<GUIClass name="GroupBox" />
+			<GUIClass name="OptionButton" />
+			<GUIClass name="CheckBox" />
+		</threeDControls>
+	</Application>
+</schema>

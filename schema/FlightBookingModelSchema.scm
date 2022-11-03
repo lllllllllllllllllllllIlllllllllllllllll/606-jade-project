@@ -1,29 +1,23 @@
-/* JADE COMMAND FILE NAME H:\Docs\606-jade-project\schema\FlightBookingModelSchema.jcf */
-jadeVersionNumber "20.0.02";
+﻿jadeVersionNumber "22.0.01";
 schemaDefinition
 FlightBookingModelSchema subschemaOf RootSchema completeDefinition, patchVersioningEnabled = false;
-		setModifiedTimeStamp "user" "20.0.02" 2022:08:17:22:54:09.249;
-importedPackageDefinitions
-constantDefinitions
+	setModifiedTimeStamp "user" "20.0.02" 2022:08:17:22:54:09.249;
 localeDefinitions
 	1033 "English (United States)" schemaDefaultLocale;
-		setModifiedTimeStamp "user" "20.0.02" 2022:08:17:22:54:09.230;
+	setModifiedTimeStamp "user" "20.0.02" 2022:08:17:22:54:09.230;
 	5129 "English (New Zealand)" _cloneOf 1033;
-		setModifiedTimeStamp "<unknown>" "" 2022:11:01:20:24:09;
-libraryDefinitions
+	setModifiedTimeStamp "<unknown>" "" 2022:11:03:17:20:10;
 typeHeaders
-	Airport subclassOf Object highestOrdinal = 4, number = 2063;
-	FlightBookingModelSchema subclassOf RootSchemaApp transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2055;
-	Flight subclassOf Object highestOrdinal = 6, number = 2058;
-	FlightPath subclassOf Object highestOrdinal = 5, number = 2059;
-	GFlightBookingModelSchema subclassOf RootSchemaGlobal transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2056;
-	Passenger subclassOf Object highestOrdinal = 9, number = 2061;
-	Plane subclassOf Object highestOrdinal = 5, number = 2062;
-	Ticket subclassOf Object highestOrdinal = 8, number = 2064;
-	SFlightBookingModelSchema subclassOf RootSchemaSession transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2057;
- 
+	Airport subclassOf Object highestOrdinal = 4, number = 2072;
+	FlightBookingModelSchema subclassOf RootSchemaApp transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2073;
+	Flight subclassOf Object highestOrdinal = 6, number = 2074;
+	FlightPath subclassOf Object highestOrdinal = 5, number = 2075;
+	GFlightBookingModelSchema subclassOf RootSchemaGlobal transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2076;
+	Passenger subclassOf Object highestOrdinal = 9, number = 2077;
+	Plane subclassOf Object highestOrdinal = 5, number = 2078;
+	Ticket subclassOf Object highestOrdinal = 8, number = 2079;
+	SFlightBookingModelSchema subclassOf RootSchemaSession transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2080;
 membershipDefinitions
- 
 typeDefinitions
 	Object completeDefinition
 	(
@@ -159,27 +153,23 @@ typeDefinitions
 	Form completeDefinition
 	(
 	)
- 
-inverseDefinitions
 databaseDefinitions
-FlightBookingModelSchemaDb
+	FlightBookingModelSchemaDb
 	(
-		setModifiedTimeStamp "user" "20.0.02" 2022:08:17:22:54:09.249;
+	setModifiedTimeStamp "user" "20.0.02" 2022:08:17:22:54:09.249;
 	databaseFileDefinitions
 		"jademasters-airline" number = 52;
 		setModifiedTimeStamp "user" "20.0.02" 2022:08:17:22:54:09.249;
 	defaultFileDefinition "jademasters-airline";
 	classMapDefinitions
-		SFlightBookingModelSchema in "_environ";
+		Airport in "jademasters-airline";
+		Flight in "jademasters-airline";
 		FlightBookingModelSchema in "_usergui";
+		FlightPath in "jademasters-airline";
 		GFlightBookingModelSchema in "jademasters-airline";
 		Passenger in "jademasters-airline";
 		Plane in "jademasters-airline";
-		Airport in "jademasters-airline";
+		SFlightBookingModelSchema in "_environ";
 		Ticket in "jademasters-airline";
-		FlightPath in "jademasters-airline";
-		Flight in "jademasters-airline";
 	)
-schemaViewDefinitions
-exportedPackageDefinitions
 typeSources

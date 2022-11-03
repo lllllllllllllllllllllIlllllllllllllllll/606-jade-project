@@ -1,25 +1,21 @@
-/* JADE COMMAND FILE NAME H:\Docs\606-jade-project\schema\FlightBookingViewSchema.jcf */
-jadeVersionNumber "20.0.02";
+﻿jadeVersionNumber "22.0.01";
 schemaDefinition
 FlightBookingViewSchema subschemaOf FlightBookingModelSchema completeDefinition, patchVersioningEnabled = false;
-		setModifiedTimeStamp "user" "20.0.02" 2022:08:22:22:36:36.479;
-importedPackageDefinitions
-constantDefinitions
+	setModifiedTimeStamp "user" "20.0.02" 2022:08:22:22:36:36.479;
 localeDefinitions
 	1033 "English (United States)" schemaDefaultLocale;
-		setModifiedTimeStamp "user" "20.0.02" 2022:08:22:22:36:36.463;
-libraryDefinitions
+	setModifiedTimeStamp "user" "20.0.02" 2022:08:22:22:36:36.463;
+	5129 "English (New Zealand)" _cloneOf 1033;
+	setModifiedTimeStamp "<unknown>" "" 2022:11:03:17:20:52;
 typeHeaders
-	FlightBookingViewSchema subclassOf FlightBookingModelSchema transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2068;
-	GFlightBookingViewSchema subclassOf GFlightBookingModelSchema transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2069;
-	SFlightBookingViewSchema subclassOf SFlightBookingModelSchema transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2070;
-	FormAdmin subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 9, number = 2072;
-	FormGuest subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 9, number = 2074;
-	FormLogin subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 7, number = 2071;
-	FormManager subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 9, number = 2073;
- 
+	FlightBookingViewSchema subclassOf FlightBookingModelSchema transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2081;
+	GFlightBookingViewSchema subclassOf GFlightBookingModelSchema transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2082;
+	SFlightBookingViewSchema subclassOf SFlightBookingModelSchema transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2083;
+	FormAdmin subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 9, number = 2084;
+	FormGuest subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 9, number = 2085;
+	FormLogin subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 7, number = 2086;
+	FormManager subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 9, number = 2087;
 membershipDefinitions
- 
 typeDefinitions
 	Object completeDefinition
 	(
@@ -121,7 +117,7 @@ typeDefinitions
 	)
 	FormLogin completeDefinition
 	(
-		setModifiedTimeStamp "2013000918" "20.0.02" 2022:11:01:20:28:42.528;
+		setModifiedTimeStamp "codyd" "22.0.01" 2022:11:03:17:30:04.331;
 	referenceDefinitions
 		buttonLogin:                   Button  number = 2, ordinal = 2;
 		setModifiedTimeStamp "user" "20.0.02" 2022:08:22:22:43:10.066;
@@ -137,13 +133,11 @@ typeDefinitions
 		setModifiedTimeStamp "user" "20.0.02" 2022:08:22:22:43:10.067;
 		textBoxUsername:               TextBox  number = 5, ordinal = 5;
 		setModifiedTimeStamp "user" "20.0.02" 2022:08:22:22:43:10.067;
- 
 	jadeMethodDefinitions
 		buttonLogin_click(btn: Button input) updating, number = 1002;
 		setModifiedTimeStamp "user" "20.0.02" 2022:08:22:23:01:17.889;
 		buttonQuit_click(btn: Button input) updating, number = 1001;
 		setModifiedTimeStamp "user" "20.0.02" 2022:08:22:22:45:27.910;
- 
 	eventMethodMappings
 		buttonLogin_click = click of Button;
 		buttonQuit_click = click of Button;
@@ -171,23 +165,19 @@ typeDefinitions
 		timeTextbox:                   TextBox  number = 6, ordinal = 6;
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:27:14.141;
 	)
- 
-inverseDefinitions
 databaseDefinitions
-FlightBookingViewSchemaDb
+	FlightBookingViewSchemaDb
 	(
-		setModifiedTimeStamp "user" "20.0.02" 2022:08:22:22:36:36.479;
+	setModifiedTimeStamp "user" "20.0.02" 2022:08:22:22:36:36.479;
 	databaseFileDefinitions
 		"jademasters-airline" number = 52;
 		setModifiedTimeStamp "user" "20.0.02" 2022:08:17:22:54:09.249;
 	defaultFileDefinition "jademasters-airline";
 	classMapDefinitions
-		SFlightBookingViewSchema in "_environ";
 		FlightBookingViewSchema in "_usergui";
 		GFlightBookingViewSchema in "jademasters-airline";
+		SFlightBookingViewSchema in "_environ";
 	)
-schemaViewDefinitions
-exportedPackageDefinitions
 typeSources
 	FormLogin (
 	jadeMethodSources
@@ -215,9 +205,7 @@ begin
 		delete self;
 	endif;
 end;
-
 }
-
 buttonQuit_click
 {
 buttonQuit_click(btn: Button input) updating;
@@ -227,7 +215,5 @@ vars
 begin
 	delete self;
 end;
-
 }
-
 	)
