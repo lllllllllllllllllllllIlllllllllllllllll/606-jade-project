@@ -14,22 +14,24 @@ libraryDefinitions
 typeHeaders
 	Airport subclassOf Object highestOrdinal = 4, number = 2070;
 	FlightBookingModelSchema subclassOf RootSchemaApp transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, highestOrdinal = 1, number = 2071;
-	Booking subclassOf Object highestSubId = 2, highestOrdinal = 9, number = 2072;
+	Booking subclassOf Object highestSubId = 3, highestOrdinal = 10, number = 2072;
 	Flight subclassOf Object highestOrdinal = 8, number = 2073;
 	FlightPath subclassOf Object highestOrdinal = 5, number = 2074;
 	GFlightBookingModelSchema subclassOf RootSchemaGlobal transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2075;
 	Passenger subclassOf Object highestOrdinal = 11, number = 2076;
 	Plane subclassOf Object highestOrdinal = 8, number = 2077;
 	SequenceNumber subclassOf Object highestOrdinal = 1, number = 2089;
-	Ticket subclassOf Object highestOrdinal = 11, number = 2078;
+	Ticket subclassOf Object highestOrdinal = 12, number = 2078;
 	SFlightBookingModelSchema subclassOf RootSchemaSession transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2079;
 	FlightsById subclassOf MemberKeyDictionary loadFactor = 66, number = 2091;
 	PassengersById subclassOf MemberKeyDictionary loadFactor = 66, number = 2084;
+	TicketsById subclassOf MemberKeyDictionary loadFactor = 66, number = 2057;
 	AirportArray subclassOf Array number = 2094;
  
 membershipDefinitions
 	FlightsById of Flight ;
 	PassengersById of Passenger ;
+	TicketsById of Ticket ;
 	AirportArray of Airport ;
  
 typeDefinitions
@@ -79,6 +81,8 @@ typeDefinitions
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:02:25:34.444;
 		allPassengersById:             PassengersById   explicitInverse, readonly, subId = 2, number = 5, ordinal = 9;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:04:19:02:18.905;
+		allTicketsById:                TicketsById   explicitInverse, readonly, subId = 3, number = 7, ordinal = 10;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:05:02:57:07.133;
 		myFlightId:                    SequenceNumber  protected, number = 2, ordinal = 2;
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:18:24:39.763;
 		myFlightPathId:                SequenceNumber  protected, number = 3, ordinal = 3;
@@ -177,6 +181,8 @@ typeDefinitions
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:04:23:05:50.097;
 		createTest() number = 1004;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:04:20:04:45.818;
+		createTickets() number = 1007;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:05:04:07:05.266;
 		deleteTest() number = 1006;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:04:19:06:08.599;
 	)
@@ -276,6 +282,8 @@ typeDefinitions
 	referenceDefinitions
 		flight:                        Flight  readonly, number = 3, ordinal = 11;
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:12:53:45.288;
+		myBooking:                     Booking   explicitEmbeddedInverse, protected, number = 9, ordinal = 12;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:05:02:57:07.133;
 		passenger:                     Passenger  readonly, number = 2, ordinal = 10;
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:12:53:30.807;
  
@@ -290,7 +298,7 @@ typeDefinitions
 			pPaymentStatus: Boolean; 
 			pPrice: Decimal; 
 			pDate: Date) updating, number = 1002;
-		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:10:34:01.538;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:05:02:57:21.571;
 	)
 	WebSession completeDefinition
 	(
@@ -329,6 +337,10 @@ typeDefinitions
 	(
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:04:19:01:32.210;
 	)
+	TicketsById completeDefinition
+	(
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:05:02:56:27.758;
+	)
 	List completeDefinition
 	(
 	)
@@ -349,10 +361,15 @@ memberKeyDefinitions
 	(
 		id;
 	)
+	TicketsById completeDefinition
+	(
+		id;
+	)
  
 inverseDefinitions
 	allFlightsbyId of Booking automatic peerOf myBooking of Flight manual;
 	allPassengersById of Booking automatic peerOf myBooking of Passenger manual;
+	allTicketsById of Booking automatic peerOf myBooking of Ticket manual;
 databaseDefinitions
 FlightBookingModelSchemaDb
 	(
@@ -376,6 +393,7 @@ FlightBookingModelSchemaDb
 		FlightsById in "jademasters-airline";
 		AirportArray in "jademasters-airline";
 		PassengersById in "jademasters-airline";
+		TicketsById in "jademasters-airline";
 	)
 schemaViewDefinitions
 exportedPackageDefinitions
@@ -710,6 +728,18 @@ end;
 
 }
 
+createTickets
+{
+createTickets();
+
+vars
+	
+begin
+
+end;
+
+}
+
 deleteTest
 {
 deleteTest();
@@ -856,6 +886,7 @@ begin
 	self.paymentStatus := pPaymentStatus;
 	self.price := pPrice;
 	self.date := pDate;
+	self.myBooking := app.myBooking;
 end;
 
 }
