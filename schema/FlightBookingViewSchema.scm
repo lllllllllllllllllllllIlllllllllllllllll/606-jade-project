@@ -1,4 +1,4 @@
-/* JADE COMMAND FILE NAME C:\Users\2021005284\OneDrive - Southern Institute of Technology\itc606-jade\project\606-jade-project\schema\FlightBookingViewSchema.jcf */
+/* JADE COMMAND FILE NAME \\sit.inet\SIT\Home\INVStudents\2021002164\GitHub\606-jade-project\schema\FlightBookingViewSchema.jcf */
 jadeVersionNumber "20.0.02";
 schemaDefinition
 FlightBookingViewSchema subschemaOf FlightBookingModelSchema completeDefinition, patchVersioningEnabled = false;
@@ -17,7 +17,7 @@ typeHeaders
 	SFlightBookingViewSchema subclassOf SFlightBookingModelSchema transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2092;
 	FormAdmin subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 9, number = 2093;
 	FormBookFlight subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 6, number = 2107;
-	FormFlightSearch subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 16, number = 2096;
+	FormFlightSearch subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 17, number = 2096;
 	FormFlightView subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 10, number = 2090;
 	FormGuest subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 17, number = 2097;
 	FormLogin subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 9, number = 2098;
@@ -130,7 +130,7 @@ typeDefinitions
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:02:50:42.927;
 		boxDeparture:                  ComboBox  number = 10, ordinal = 13;
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:02:50:42.927;
-		btnSearch:                     Button  number = 2, ordinal = 2;
+		btnSearch:                     Button  number = 12, ordinal = 15;
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:02:47:36.562;
 		buttonGoback:                  Button  number = 11, ordinal = 14;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:20:33:33.140;
@@ -138,13 +138,13 @@ typeDefinitions
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:02:47:36.565;
 		labelDate:                     Label  number = 8, ordinal = 8;
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:02:47:36.566;
-		labelDate_1:                   Label  number = 4, ordinal = 16;
+		labelDate_1:                   Label  number = 13, ordinal = 16;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:21:39:54.577;
 		lblFrom:                       Label  number = 1, ordinal = 1;
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:02:47:36.561;
 		lblTo:                         Label  number = 7, ordinal = 7;
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:02:47:36.565;
-		textBoxDate:                   TextBox  number = 3, ordinal = 15;
+		textBoxDate:                   TextBox  number = 14, ordinal = 17;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:21:39:54.577;
  
 	jadeMethodDefinitions
@@ -182,6 +182,8 @@ typeDefinitions
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:22:05:45.461;
 		searchFrom:                    String[31] number = 8, ordinal = 9;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:22:05:34.352;
+		searchKey:                     String[31] number = 2, ordinal = 2;
+		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:01:23:42.740;
 		searchTo:                      String[31] number = 7, ordinal = 8;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:22:05:25.399;
 	referenceDefinitions
@@ -252,12 +254,20 @@ typeDefinitions
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:04:13:01:08.267;
 		load() updating, number = 1004;
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:21:17:00.968;
+		table1_displayRow(
+			table: Table input; 
+			theSheet: Integer; 
+			obj: Object; 
+			theRow: Integer; 
+			bcontinue: Boolean io): String updating, number = 1005;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:06:22:58:26.454;
  
 	eventMethodMappings
 		btnCancel_click = click of Button;
 		btnOk_click = click of Button;
 		flightTable_displayRow = displayRow of Table;
 		load = load of Form;
+		table1_displayRow = displayRow of Table;
 	)
 	FormLogin completeDefinition
 	(
@@ -286,7 +296,7 @@ typeDefinitions
 		buttonGuestLogin_click(btn: Button input) updating, number = 1003;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:04:15:36:13.434;
 		buttonLogin_click(btn: Button input) updating, number = 1002;
-		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:21:39:08.731;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:06:23:56:54.731;
 		buttonQuit_click(btn: Button input) updating, number = 1001;
 		setModifiedTimeStamp "user" "20.0.02" 2022:08:22:22:45:27.910;
 		load() updating, number = 1004;
@@ -798,6 +808,19 @@ end;
 
 }
 
+table1_displayRow
+{
+table1_displayRow(table: Table input; theSheet: Integer; obj: Object; theRow: Integer; bcontinue: Boolean io):String updating;
+
+vars
+	flight : Flight;
+begin
+	flight := obj.Flight;
+	return flight.plane.String & Tab & flight.flightPath.String & Tab & flight.flightStatus.String & Tab & flight.date.String & Tab & flight.time.String & Tab & flight.id.String;
+end;
+
+}
+
 	)
 	FormLogin (
 	jadeMethodSources
@@ -826,6 +849,7 @@ vars
 	formGuest : FormGuest;
 	formManager : FormManager;
 	formAdmin : FormAdmin;
+	account : Account;
 begin
 	if textBoxUsername.text = "guest" then
 		create formGuest transient;
@@ -839,6 +863,27 @@ begin
 		create formAdmin transient;
 		formAdmin.show();
 		delete self;
+	elseif textBoxUsername.text = account.accountName then
+		if textBoxPassword.text = account.accountPassword then
+			if account.accountAccessLevel=0 then
+				create formAdmin transient;
+				formAdmin.show();
+				delete self;
+			elseif account.accountAccessLevel=1 then 
+				create formManager transient;
+				formManager.show();
+				delete self;
+			elseif account.accountAccessLevel=2 then
+				create formGuest transient;
+				formManager.show();
+				delete self;
+			else
+//				("ERROR ACCESS LEVEL NOT WITHIN RANGE", "ERROR", MsgBox_OK_Only);
+				delete self;
+			endif;
+		else
+				delete self;
+		endif;
 	endif;
 end;
 
