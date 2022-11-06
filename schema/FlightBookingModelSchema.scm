@@ -1,4 +1,4 @@
-/* JADE COMMAND FILE NAME C:\Users\2021005284\OneDrive - Southern Institute of Technology\itc606-jade\project\606-jade-project\schema\FlightBookingModelSchema.jcf */
+/* JADE COMMAND FILE NAME \\sit.inet\SIT\Home\INVStudents\2021002164\GitHub\606-jade-project\schema\FlightBookingModelSchema.jcf */
 jadeVersionNumber "20.0.02";
 schemaDefinition
 FlightBookingModelSchema subschemaOf RootSchema completeDefinition, patchVersioningEnabled = false;
@@ -12,6 +12,7 @@ localeDefinitions
 		setModifiedTimeStamp "<unknown>" "" 2022:11:06:19:44:17;
 libraryDefinitions
 typeHeaders
+	Account subclassOf Object highestOrdinal = 6, number = 2100;
 	Airport subclassOf Object highestOrdinal = 5, number = 2070;
 	FlightBookingModelSchema subclassOf RootSchemaApp transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, highestOrdinal = 1, number = 2071;
 	Booking subclassOf Object highestSubId = 4, highestOrdinal = 11, number = 2072;
@@ -23,12 +24,12 @@ typeHeaders
 	SequenceNumber subclassOf Object highestOrdinal = 1, number = 2089;
 	Ticket subclassOf Object highestOrdinal = 12, number = 2078;
 	SFlightBookingModelSchema subclassOf RootSchemaSession transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2079;
-	AirportsByCityName subclassOf MemberKeyDictionary loadFactor = 66, number = 2048;
+	AirportsByCityName subclassOf MemberKeyDictionary loadFactor = 66, number = 2081;
 	FlightsById subclassOf MemberKeyDictionary loadFactor = 66, number = 2091;
 	PassengersById subclassOf MemberKeyDictionary loadFactor = 66, number = 2084;
 	TicketsById subclassOf MemberKeyDictionary loadFactor = 66, number = 2057;
 	AirportArray subclassOf Array number = 2094;
-	FlightArray subclassOf Array number = 2050;
+	FlightArray subclassOf Array number = 2083;
  
 membershipDefinitions
 	AirportsByCityName of Airport ;
@@ -41,6 +42,22 @@ membershipDefinitions
 typeDefinitions
 	Object completeDefinition
 	(
+	)
+	Account completeDefinition
+	(
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:06:23:26:17.319;
+	attributeDefinitions
+		accountAccessLevel:            Integer number = 4, ordinal = 5;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:06:23:26:32.414;
+		accountID:                     Integer number = 1, ordinal = 1;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:06:23:23:04.151;
+		accountName:                   String[31] number = 2, ordinal = 2;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:06:23:23:28.542;
+		accountPassword:               String[31] number = 3, ordinal = 3;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:06:23:24:39.509;
+	referenceDefinitions
+		acctPassengers:                Passenger  number = 5, ordinal = 6;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:06:23:33:22.335;
 	)
 	Airport completeDefinition
 	(
@@ -418,6 +435,7 @@ FlightBookingModelSchemaDb
 		TicketsById in "jademasters-airline";
 		AirportsByCityName in "jademasters-airline";
 		FlightArray in "jademasters-airline";
+		Account in "jademasters-airline";
 	)
 schemaViewDefinitions
 exportedPackageDefinitions
