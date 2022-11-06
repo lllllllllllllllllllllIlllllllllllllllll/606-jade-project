@@ -1,4 +1,4 @@
-/* JADE COMMAND FILE NAME \\sit.inet\SIT\Home\INVStudents\2021002164\GitHub\606-jade-project\schema\FlightBookingViewSchema.jcf */
+/* JADE COMMAND FILE NAME C:\Users\2021005284\OneDrive - Southern Institute of Technology\itc606-jade\project\606-jade-project\schema\FlightBookingViewSchema.jcf */
 jadeVersionNumber "20.0.02";
 schemaDefinition
 FlightBookingViewSchema subschemaOf FlightBookingModelSchema completeDefinition, patchVersioningEnabled = false;
@@ -9,7 +9,7 @@ localeDefinitions
 	1033 "English (United States)" schemaDefaultLocale;
 		setModifiedTimeStamp "user" "20.0.02" 2022:08:22:22:36:36.463;
 	5129 "English (New Zealand)" _cloneOf 1033;
-		setModifiedTimeStamp "<unknown>" "" 2022:11:06:21:01:11;
+		setModifiedTimeStamp "<unknown>" "" 2022:11:06:21:38:23;
 libraryDefinitions
 typeHeaders
 	FlightBookingViewSchema subclassOf FlightBookingModelSchema transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2087;
@@ -17,8 +17,8 @@ typeHeaders
 	SFlightBookingViewSchema subclassOf SFlightBookingModelSchema transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2092;
 	FormAdmin subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 9, number = 2093;
 	FormBookFlight subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 6, number = 2107;
-	FormFlightSearch subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 14, number = 2096;
-	FormFlightView subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 6, number = 2090;
+	FormFlightSearch subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 16, number = 2096;
+	FormFlightView subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 10, number = 2090;
 	FormGuest subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 17, number = 2097;
 	FormLogin subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 9, number = 2098;
 	FormManager subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 19, number = 2099;
@@ -124,47 +124,66 @@ typeDefinitions
 	)
 	FormFlightSearch completeDefinition
 	(
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:20:33:33.140;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:21:46:38.169;
 	referenceDefinitions
 		boxArrival:                    ComboBox  number = 9, ordinal = 12;
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:02:50:42.927;
-		boxDay:                        ComboBox  number = 3, ordinal = 9;
-		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:02:50:42.927;
 		boxDeparture:                  ComboBox  number = 10, ordinal = 13;
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:02:50:42.927;
-		boxMonth:                      ComboBox  number = 4, ordinal = 10;
-		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:02:50:42.927;
-		boxYear:                       ComboBox  number = 5, ordinal = 11;
-		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:02:50:42.927;
+		btnSearch:                     Button  number = 2, ordinal = 2;
+		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:02:47:36.562;
 		buttonGoback:                  Button  number = 11, ordinal = 14;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:20:33:33.140;
 		label4:                        Label  number = 6, ordinal = 6;
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:02:47:36.565;
 		labelDate:                     Label  number = 8, ordinal = 8;
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:02:47:36.566;
+		labelDate_1:                   Label  number = 4, ordinal = 16;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:21:39:54.577;
 		lblFrom:                       Label  number = 1, ordinal = 1;
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:02:47:36.561;
 		lblTo:                         Label  number = 7, ordinal = 7;
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:02:47:36.565;
-		s:                             Button  number = 2, ordinal = 2;
-		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:02:47:36.562;
+		textBoxDate:                   TextBox  number = 3, ordinal = 15;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:21:39:54.577;
  
 	jadeMethodDefinitions
+		boxArrival_displayRow(
+			combobox: ComboBox input; 
+			obj: Object; 
+			lstIndex: Integer; 
+			bcontinue: Boolean io): String updating, number = 1003;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:21:41:02.045;
+		boxDeparture_displayRow(
+			combobox: ComboBox input; 
+			obj: Object; 
+			lstIndex: Integer; 
+			bcontinue: Boolean io): String updating, number = 1004;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:21:41:10.920;
+		btnSearch_click(btn: Button input) updating, number = 1005;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:22:17:46.583;
 		buttonGoback_click(btn: Button input) updating, number = 1002;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:20:34:16.968;
 		load() updating, number = 1001;
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:04:13:11:14.181;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:21:45:18.935;
  
 	eventMethodMappings
+		boxArrival_displayRow = displayRow of ComboBox;
+		boxDeparture_displayRow = displayRow of ComboBox;
+		btnSearch_click = click of Button;
 		buttonGoback_click = click of Button;
 		load = load of Form;
 	)
 	FormFlightView completeDefinition
 	(
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:20:48:08.199;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:22:28:24.550;
 	attributeDefinitions
-		searchKey:                     String[31] number = 2, ordinal = 2;
-		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:01:23:42.740;
+		searchDate:                    Date number = 9, ordinal = 10;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:22:05:45.461;
+		searchFrom:                    String[31] number = 8, ordinal = 9;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:22:05:34.352;
+		searchTo:                      String[31] number = 7, ordinal = 8;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:22:05:25.399;
 	referenceDefinitions
 		btnBook:                       Button  number = 5, ordinal = 5;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:04:14:20:22.303;
@@ -183,7 +202,7 @@ typeDefinitions
 		buttonGoback_click(btn: Button input) updating, number = 1004;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:20:31:28.078;
 		load() updating, number = 1001;
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:05:00:45:32.882;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:22:27:14.206;
 		tableFlight_displayRow(
 			table: Table input; 
 			theSheet: Integer; 
@@ -304,7 +323,7 @@ typeDefinitions
 	)
 	FormMenu completeDefinition
 	(
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:20:48:07.745;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:22:28:35.300;
 	referenceDefinitions
 		mnAccntLogin:                  MenuItem  number = 6, ordinal = 6;
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
@@ -558,6 +577,61 @@ exportedPackageDefinitions
 typeSources
 	FormFlightSearch (
 	jadeMethodSources
+boxArrival_displayRow
+{
+boxArrival_displayRow(combobox: ComboBox input; obj: Object; lstIndex: Integer; bcontinue: Boolean io):String updating;
+
+vars
+	airport : Airport;
+begin
+	airport := obj.Airport;
+	return airport.cityName;
+end;
+
+}
+
+boxDeparture_displayRow
+{
+boxDeparture_displayRow(combobox: ComboBox input; obj: Object; lstIndex: Integer; bcontinue: Boolean io):String updating;
+
+vars
+	airport : Airport;
+begin
+	airport := obj.Airport;
+	return airport.cityName;
+end;
+}
+
+btnSearch_click
+{
+btnSearch_click(btn: Button input) updating;
+
+vars
+	form : FormFlightView;
+
+	searchFrom : String;
+	searchTo : String;
+	searchDate : Date;
+begin
+
+	if not boxDeparture.text = null and not boxArrival.text = null and
+		not textBoxDate.text = null then
+		searchFrom := boxDeparture.text;
+		searchTo := boxArrival.text;
+		searchDate := textBoxDate.text.Date;
+		
+		create form transient;
+		form.searchFrom := searchFrom;
+		form.searchTo := searchTo;
+		form.searchDate := searchDate;
+		form.show();
+	endif;
+epilog
+	delete self;
+end;
+
+}
+
 buttonGoback_click
 {
 buttonGoback_click(btn: Button input) updating;
@@ -579,7 +653,13 @@ load() updating;
 vars
 
 begin
-
+	app.initialize();
+	if not app.myBooking.allAirportsByCityName = null then
+		boxDeparture.displayCollection(app.myBooking.allAirportsByCityName, true,
+									null, null, null);
+		boxArrival.displayCollection(app.myBooking.allAirportsByCityName, true,
+										null, null, null);
+	endif;
 end;
 
 }
@@ -618,14 +698,29 @@ load
 load() updating;
 
 vars
-
+	flight : Flight;
+	flights : FlightArray;
 begin
+	app.initialize();
 	tableFlight.setCellText(1, 1, "Date" & Tab & "Time" & Tab & "From" & Tab & "To" & Tab &
 							"Plane" & Tab & "Status");
 
-	if searchKey = null then
+	if searchDate = null then
 		tableFlight.displayCollection(Booking.firstInstance.allFlightsbyId, true,
 									Table.DisplayCollection_Forward, null);
+	else
+		beginTransaction;
+		create flights persistent;
+		foreach flight in Booking.firstInstance.allFlightsbyId do
+			if flight.flightPath.departureAirport.cityName = searchFrom and
+				flight.flightPath.arrivalAirport.cityName = searchTo and
+				flight.date = searchDate and flight.flightStatus = 'Scheduled' then
+					flights.add(flight);
+			endif;
+		endforeach;
+		tableFlight.displayCollection(flights, true,
+									Table.DisplayCollection_Forward, null);
+		commitTransaction;
 	endif;
 end;
 

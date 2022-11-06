@@ -12,9 +12,9 @@ localeDefinitions
 		setModifiedTimeStamp "<unknown>" "" 2022:11:06:19:44:17;
 libraryDefinitions
 typeHeaders
-	Airport subclassOf Object highestOrdinal = 4, number = 2070;
+	Airport subclassOf Object highestOrdinal = 5, number = 2070;
 	FlightBookingModelSchema subclassOf RootSchemaApp transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, highestOrdinal = 1, number = 2071;
-	Booking subclassOf Object highestSubId = 3, highestOrdinal = 10, number = 2072;
+	Booking subclassOf Object highestSubId = 4, highestOrdinal = 11, number = 2072;
 	Flight subclassOf Object highestOrdinal = 8, number = 2073;
 	FlightPath subclassOf Object highestOrdinal = 5, number = 2074;
 	GFlightBookingModelSchema subclassOf RootSchemaGlobal transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2075;
@@ -23,16 +23,20 @@ typeHeaders
 	SequenceNumber subclassOf Object highestOrdinal = 1, number = 2089;
 	Ticket subclassOf Object highestOrdinal = 12, number = 2078;
 	SFlightBookingModelSchema subclassOf RootSchemaSession transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2079;
+	AirportsByCityName subclassOf MemberKeyDictionary loadFactor = 66, number = 2048;
 	FlightsById subclassOf MemberKeyDictionary loadFactor = 66, number = 2091;
 	PassengersById subclassOf MemberKeyDictionary loadFactor = 66, number = 2084;
 	TicketsById subclassOf MemberKeyDictionary loadFactor = 66, number = 2057;
 	AirportArray subclassOf Array number = 2094;
+	FlightArray subclassOf Array number = 2050;
  
 membershipDefinitions
+	AirportsByCityName of Airport ;
 	FlightsById of Flight ;
 	PassengersById of Passenger ;
 	TicketsById of Ticket ;
 	AirportArray of Airport ;
+	FlightArray of Flight ;
  
 typeDefinitions
 	Object completeDefinition
@@ -48,13 +52,16 @@ typeDefinitions
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:02:00:07:07.402;
 		cityName:                      String[31] readonly, number = 1, ordinal = 3;
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:08:21:23:15:18.017;
+	referenceDefinitions
+		myBooking:                     Booking   explicitEmbeddedInverse, protected, number = 4, ordinal = 5;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:21:42:19.045;
  
 	jadeMethodDefinitions
 		setPropertiesOnCreate(
 			pAirportCode: String; 
 			pCityCode: String; 
 			pCityName: String) updating, number = 1001;
-		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:02:22:48.636;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:21:06:42.272;
 	)
 	Application completeDefinition
 	(
@@ -77,6 +84,8 @@ typeDefinitions
 	(
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:04:16:09:32.605;
 	referenceDefinitions
+		allAirportsByCityName:         AirportsByCityName   explicitInverse, readonly, subId = 4, number = 8, ordinal = 11;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:21:42:19.045;
 		allFlightsbyId:                FlightsById   explicitInverse, readonly, subId = 1, number = 1, ordinal = 8;
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:02:25:34.444;
 		allPassengersById:             PassengersById   explicitInverse, readonly, subId = 2, number = 5, ordinal = 9;
@@ -176,15 +185,15 @@ typeDefinitions
 		createAirportsTest() number = 1002;
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:18:29:44.367;
 		createBooking() number = 1005;
-		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:01:42:50.624;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:20:52:50.869;
 		createPassengers() number = 1001;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:04:23:05:50.097;
 		createTest() number = 1004;
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:04:20:04:45.818;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:21:45:33.247;
 		createTickets() number = 1007;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:05:04:07:05.266;
 		deleteTest() number = 1006;
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:04:19:06:08.599;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:20:52:49.301;
 	)
 	Passenger completeDefinition
 	(
@@ -329,6 +338,10 @@ typeDefinitions
 	MemberKeyDictionary completeDefinition
 	(
 	)
+	AirportsByCityName completeDefinition
+	(
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:21:27:13.313;
+	)
 	FlightsById completeDefinition
 	(
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:02:24:54.306;
@@ -351,8 +364,16 @@ typeDefinitions
 	(
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:02:27:21.332;
 	)
+	FlightArray completeDefinition
+	(
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:22:13:01.647;
+	)
  
 memberKeyDefinitions
+	AirportsByCityName completeDefinition
+	(
+		cityName;
+	)
 	FlightsById completeDefinition
 	(
 		id;
@@ -367,6 +388,7 @@ memberKeyDefinitions
 	)
  
 inverseDefinitions
+	allAirportsByCityName of Booking automatic peerOf myBooking of Airport manual;
 	allFlightsbyId of Booking automatic peerOf myBooking of Flight manual;
 	allPassengersById of Booking automatic peerOf myBooking of Passenger manual;
 	allTicketsById of Booking automatic peerOf myBooking of Ticket manual;
@@ -394,6 +416,8 @@ FlightBookingModelSchemaDb
 		AirportArray in "jademasters-airline";
 		PassengersById in "jademasters-airline";
 		TicketsById in "jademasters-airline";
+		AirportsByCityName in "jademasters-airline";
+		FlightArray in "jademasters-airline";
 	)
 schemaViewDefinitions
 exportedPackageDefinitions
@@ -412,6 +436,7 @@ begin
 	self.airportCode := pAirportCode;
 	self.cityCode := pCityCode;
 	self.cityName := pCityName;
+	self.myBooking := app.myBooking;
 end;
 
 }
@@ -697,6 +722,25 @@ begin
 	create airport persistent;
 	airport.setPropertiesOnCreate('AKL', 'AUC', 'Auckland');
 	airportArray.add(airport);
+	create airport persistent;
+	airport.setPropertiesOnCreate('BHE', 'BLE', 'Blenheim');
+	airportArray.add(airport);
+	create airport persistent;
+	airport.setPropertiesOnCreate('CHC', 'CHR', 'Christchurch');
+	airportArray.add(airport);
+	create airport persistent;
+	airport.setPropertiesOnCreate('GIS', 'GIS', 'Gisbourne');
+	airportArray.add(airport);
+	create airport persistent;
+	airport.setPropertiesOnCreate('HLZ', 'HAM', 'Hamilton');
+	airportArray.add(airport);
+	create airport persistent;
+	airport.setPropertiesOnCreate('DUD', 'DUN', 'Dunedin');
+	airportArray.add(airport);
+	create airport persistent;
+	airport.setPropertiesOnCreate('ZQN', 'QUE', 'Queenstown');
+	airportArray.add(airport);
+	
 	
 	create flightPath persistent;
 	flightPath.setPropertiesOnCreate(airportArray[1], airportArray[2]);
