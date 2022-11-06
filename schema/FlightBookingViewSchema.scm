@@ -1,4 +1,4 @@
-/* JADE COMMAND FILE NAME C:\Users\2021005284\OneDrive - Southern Institute of Technology\itc606-jade\project\606-jade-project\schema\FlightBookingViewSchema.jcf */
+/* JADE COMMAND FILE NAME \\sit.inet\SIT\Home\INVStudents\2021002164\GitHub\606-jade-project\schema\FlightBookingViewSchema.jcf */
 jadeVersionNumber "20.0.02";
 schemaDefinition
 FlightBookingViewSchema subschemaOf FlightBookingModelSchema completeDefinition, patchVersioningEnabled = false;
@@ -9,7 +9,7 @@ localeDefinitions
 	1033 "English (United States)" schemaDefaultLocale;
 		setModifiedTimeStamp "user" "20.0.02" 2022:08:22:22:36:36.463;
 	5129 "English (New Zealand)" _cloneOf 1033;
-		setModifiedTimeStamp "<unknown>" "" 2022:11:06:19:44:30;
+		setModifiedTimeStamp "<unknown>" "" 2022:11:06:21:01:11;
 libraryDefinitions
 typeHeaders
 	FlightBookingViewSchema subclassOf FlightBookingModelSchema transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2087;
@@ -19,9 +19,9 @@ typeHeaders
 	FormBookFlight subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 6, number = 2107;
 	FormFlightSearch subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 14, number = 2096;
 	FormFlightView subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 6, number = 2090;
-	FormGuest subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 12, number = 2097;
+	FormGuest subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 17, number = 2097;
 	FormLogin subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 9, number = 2098;
-	FormManager subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 15, number = 2099;
+	FormManager subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 19, number = 2099;
 	FormMenu subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 20, number = 2095;
 	FormPassengerAddEdit subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 30, number = 2086;
 	FormPassengerView subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 7, number = 2082;
@@ -200,26 +200,24 @@ typeDefinitions
 	)
 	FormGuest completeDefinition
 	(
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:06:43:49.819;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:06:21:14:38.949;
 	referenceDefinitions
 		btnCancel:                     Button  number = 2, ordinal = 2;
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:32:34.631;
 		btnOk:                         Button  number = 3, ordinal = 3;
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:32:34.632;
-		dateTextBox:                   TextBox  number = 9, ordinal = 9;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:32:34.633;
-		flightPathTextBox:             TextBox  number = 8, ordinal = 8;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:32:34.633;
-		flightstatuslistBox2:          ListBox  number = 7, ordinal = 4;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:32:34.632;
-		idTextBox:                     TextBox  number = 10, ordinal = 7;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:32:34.633;
 		labelGuest:                    Label  number = 1, ordinal = 1;
 		setModifiedTimeStamp "user" "20.0.02" 2022:08:22:22:45:12.369;
-		planeTextbox:                  TextBox  number = 11, ordinal = 6;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:32:34.632;
-		timeTextbox:                   TextBox  number = 12, ordinal = 5;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:32:34.632;
+		listboxarrival:                ListBox  number = 7, ordinal = 16;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:06:21:14:38.949;
+		lstboxdeparture:               ListBox  number = 6, ordinal = 15;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:06:21:14:38.949;
+		table1:                        Table  number = 8, ordinal = 17;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:06:21:14:38.949;
+		txtboxarrival:                 Label  number = 5, ordinal = 14;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:06:21:14:38.949;
+		txtboxdeparture:               Label  number = 4, ordinal = 13;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:06:21:14:38.949;
  
 	jadeMethodDefinitions
 		btnCancel_click(btn: Button input) updating, number = 1003;
@@ -283,26 +281,26 @@ typeDefinitions
 	)
 	FormManager completeDefinition
 	(
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:05:00:35:15.585;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:06:21:16:21.025;
 	referenceDefinitions
 		btnCancel:                     Button  number = 9, ordinal = 9;
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:27:14.141;
 		btnOk:                         Button  number = 8, ordinal = 8;
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:27:14.141;
-		dateTextBox:                   TextBox  number = 10, ordinal = 2;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:27:14.141;
-		flightPathTextBox:             TextBox  number = 11, ordinal = 3;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:27:14.141;
 		flightstatuslistBox2:          ListBox  number = 12, ordinal = 7;
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:27:14.141;
+		flighttimemanager:             ComboBox  number = 2, ordinal = 16;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:06:21:14:42.402;
 		idTextBox:                     TextBox  number = 13, ordinal = 4;
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:27:14.141;
 		labelManager:                  Label  number = 1, ordinal = 1;
 		setModifiedTimeStamp "user" "20.0.02" 2022:08:22:22:45:12.645;
-		planeTextbox:                  TextBox  number = 14, ordinal = 5;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:27:14.141;
-		timeTextbox:                   TextBox  number = 15, ordinal = 6;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:27:14.141;
+		managerflightdate:             Label  number = 3, ordinal = 17;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:06:21:14:42.402;
+		managerflightpath:             Label  number = 4, ordinal = 18;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:06:21:14:42.402;
+		managerflightplane:            Label  number = 5, ordinal = 19;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:06:21:14:42.402;
 	)
 	FormMenu completeDefinition
 	(
