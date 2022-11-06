@@ -9,7 +9,7 @@ localeDefinitions
 	1033 "English (United States)" schemaDefaultLocale;
 		setModifiedTimeStamp "user" "20.0.02" 2022:08:22:22:36:36.463;
 	5129 "English (New Zealand)" _cloneOf 1033;
-		setModifiedTimeStamp "<unknown>" "" 2022:11:04:22:27:19;
+		setModifiedTimeStamp "<unknown>" "" 2022:11:06:03:20:52;
 libraryDefinitions
 typeHeaders
 	FlightBookingViewSchema subclassOf FlightBookingModelSchema transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2087;
@@ -22,10 +22,10 @@ typeHeaders
 	FormGuest subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 12, number = 2097;
 	FormLogin subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 9, number = 2098;
 	FormManager subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 15, number = 2099;
+	FormMenu subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 20, number = 2095;
 	FormPassengerAddEdit subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 29, number = 2086;
 	FormPassengerView subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 6, number = 2082;
 	FormTicketsView subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 4, number = 2058;
-	Menu subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 19, number = 2095;
  
 membershipDefinitions
  
@@ -46,6 +46,10 @@ typeDefinitions
 	FlightBookingViewSchema completeDefinition
 	(
 		setModifiedTimeStamp "user" "20.0.02" 2022:08:22:22:36:36.479;
+ 
+	jadeMethodDefinitions
+		backup(dba: JadeDatabaseAdmin) number = 1001;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:03:54:39.051;
 	)
 	Global completeDefinition
 	(
@@ -124,7 +128,7 @@ typeDefinitions
 	)
 	FormFlightSearch completeDefinition
 	(
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:05:04:19:37.993;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:06:45:35.250;
 	referenceDefinitions
 		boxArrival:                    ComboBox  number = 9, ordinal = 12;
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:02:50:42.927;
@@ -156,7 +160,7 @@ typeDefinitions
 	)
 	FormFlightView completeDefinition
 	(
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:05:04:19:39.152;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:06:44:48.698;
 	attributeDefinitions
 		searchKey:                     String[31] number = 2, ordinal = 2;
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:01:23:42.740;
@@ -190,7 +194,7 @@ typeDefinitions
 	)
 	FormGuest completeDefinition
 	(
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:04:23:28:49.048;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:06:43:49.819;
 	referenceDefinitions
 		btnCancel:                     Button  number = 2, ordinal = 2;
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:32:34.631;
@@ -234,7 +238,7 @@ typeDefinitions
 	)
 	FormLogin completeDefinition
 	(
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:04:23:28:34.829;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:06:40:13.380;
 	referenceDefinitions
 		button4:                       Button  number = 9, ordinal = 9;
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:21:42:48.409;
@@ -294,9 +298,68 @@ typeDefinitions
 		timeTextbox:                   TextBox  number = 15, ordinal = 6;
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:10:16:22:27:14.141;
 	)
+	FormMenu completeDefinition
+	(
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:06:44:01.628;
+	referenceDefinitions
+		mnAccntLogin:                  MenuItem  number = 6, ordinal = 6;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
+		mnuAcceptPayment:              MenuItem  number = 19, ordinal = 19;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:05:04:07:32.730;
+		mnuAccount:                    MenuItem  number = 5, ordinal = 5;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
+		mnuAdmin:                      MenuItem  number = 14, ordinal = 14;
+		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:21:27:45.101;
+		mnuBackup:                     MenuItem  number = 15, ordinal = 20;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:03:31:22.837;
+		mnuBookFlight:                 MenuItem  number = 12, ordinal = 12;
+		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:21:27:45.101;
+		mnuBooking:                    MenuItem  number = 1, ordinal = 1;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
+		mnuCreatePassenger:            MenuItem  number = 13, ordinal = 13;
+		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:21:27:45.101;
+		mnuEditDetails:                MenuItem  number = 11, ordinal = 11;
+		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:21:27:45.101;
+		mnuGuest:                      MenuItem  number = 8, ordinal = 8;
+		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:21:27:45.099;
+		mnuManagerBooking:             MenuItem  number = 3, ordinal = 3;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
+		mnuSearch:                     MenuItem  number = 9, ordinal = 9;
+		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:21:27:45.101;
+		mnuViewAll:                    MenuItem  number = 10, ordinal = 10;
+		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:21:27:45.101;
+		mnuacctLogout:                 MenuItem  number = 7, ordinal = 7;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
+		mnuadminbooking:               MenuItem  number = 4, ordinal = 4;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
+		mnuguestbooking:               MenuItem  number = 2, ordinal = 2;
+		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
+ 
+	jadeMethodDefinitions
+		load() updating, number = 1005;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:03:31:30.743;
+		mnAccntLogin_click(menuItem: MenuItem input) updating, number = 1001;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:04:13:19:06.800;
+		mnuBackup_click(menuItem: MenuItem input) updating, number = 1006;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:03:55:00.021;
+		mnuSearch_click(menuItem: MenuItem input) updating, number = 1002;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:05:02:58:47.977;
+		mnuViewAll_click(menuItem: MenuItem input) updating, number = 1004;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:05:02:58:32.070;
+		unload() updating, number = 1003;
+		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:02:52:42.080;
+ 
+	eventMethodMappings
+		load = load of Form;
+		mnAccntLogin_click = click of MenuItem;
+		mnuBackup_click = click of MenuItem;
+		mnuSearch_click = click of MenuItem;
+		mnuViewAll_click = click of MenuItem;
+		unload = unload of Form;
+	)
 	FormPassengerAddEdit completeDefinition
 	(
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:05:00:11:11.855;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:03:46:13.162;
 	attributeDefinitions
 		passengerEdition:              Integer readonly, number = 26, ordinal = 26;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:04:23:35:15.313;
@@ -432,60 +495,6 @@ typeDefinitions
 		table1:                        Table  number = 3, ordinal = 3;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:05:04:08:02.953;
 	)
-	Menu completeDefinition
-	(
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:05:04:19:38.626;
-	referenceDefinitions
-		mnAccntLogin:                  MenuItem  number = 6, ordinal = 6;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
-		mnuAcceptPayment:              MenuItem  number = 19, ordinal = 19;
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:05:04:07:32.730;
-		mnuAccount:                    MenuItem  number = 5, ordinal = 5;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
-		mnuAdmin:                      MenuItem  number = 14, ordinal = 14;
-		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:21:27:45.101;
-		mnuBookFlight:                 MenuItem  number = 12, ordinal = 12;
-		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:21:27:45.101;
-		mnuBooking:                    MenuItem  number = 1, ordinal = 1;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
-		mnuCreatePassenger:            MenuItem  number = 13, ordinal = 13;
-		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:21:27:45.101;
-		mnuEditDetails:                MenuItem  number = 11, ordinal = 11;
-		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:21:27:45.101;
-		mnuGuest:                      MenuItem  number = 8, ordinal = 8;
-		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:21:27:45.099;
-		mnuManagerBooking:             MenuItem  number = 3, ordinal = 3;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
-		mnuSearch:                     MenuItem  number = 9, ordinal = 9;
-		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:21:27:45.101;
-		mnuViewAll:                    MenuItem  number = 10, ordinal = 10;
-		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:21:27:45.101;
-		mnuacctLogout:                 MenuItem  number = 7, ordinal = 7;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
-		mnuadminbooking:               MenuItem  number = 4, ordinal = 4;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
-		mnuguestbooking:               MenuItem  number = 2, ordinal = 2;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
- 
-	jadeMethodDefinitions
-		load() updating, number = 1005;
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:04:13:19:34.690;
-		mnAccntLogin_click(menuItem: MenuItem input) updating, number = 1001;
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:04:13:19:06.800;
-		mnuSearch_click(menuItem: MenuItem input) updating, number = 1002;
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:05:02:58:47.977;
-		mnuViewAll_click(menuItem: MenuItem input) updating, number = 1004;
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:05:02:58:32.070;
-		unload() updating, number = 1003;
-		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:02:52:42.080;
- 
-	eventMethodMappings
-		load = load of Form;
-		mnAccntLogin_click = click of MenuItem;
-		mnuSearch_click = click of MenuItem;
-		mnuViewAll_click = click of MenuItem;
-		unload = unload of Form;
-	)
  
 inverseDefinitions
 databaseDefinitions
@@ -504,6 +513,25 @@ FlightBookingViewSchemaDb
 schemaViewDefinitions
 exportedPackageDefinitions
 typeSources
+	FlightBookingViewSchema (
+	jadeMethodSources
+backup
+{
+backup(dba : JadeDatabaseAdmin);
+
+vars
+	droppedFiles : DbFileArray;
+	dlg : 
+begin
+	create droppedFiles transient;
+	beginTransientTransaction;
+	dba.backupAllDbFiles("c:\jadecourse\files", true, true, false, droppedFiles);
+	commitTransientTransaction;
+end;
+
+}
+
+	)
 	FormFlightSearch (
 	jadeMethodSources
 load
@@ -684,6 +712,89 @@ end;
 load
 {
 load() updating;
+
+vars
+
+begin
+
+end;
+
+}
+
+	)
+	FormMenu (
+	jadeMethodSources
+load
+{
+load() updating;
+
+vars
+
+begin
+	self.centreWindow();
+	app.mdiFrame := FormMenu;
+end;
+
+}
+
+mnAccntLogin_click
+{
+mnAccntLogin_click(menuItem: MenuItem input) updating;
+
+vars
+	form : FormLogin;
+begin
+	create form transient;
+	form.centreWindow();
+	form.show();
+end;
+
+}
+
+mnuBackup_click
+{
+mnuBackup_click(menuItem: MenuItem input) updating;
+
+vars
+	form : JadeBackupDatabaseDialog;
+begin
+	create form;
+	form.showModal();
+end;
+
+}
+
+mnuSearch_click
+{
+mnuSearch_click(menuItem: MenuItem input) updating;
+
+vars
+	form : FormFlightSearch;
+begin
+	create form transient;
+	form.centreWindow;
+	form.show();
+end;
+
+}
+
+mnuViewAll_click
+{
+mnuViewAll_click(menuItem: MenuItem input) updating;
+
+vars
+	form : FormFlightView;
+begin
+	create form transient;
+	form.centreWindow();
+	form.show();
+end;
+
+}
+
+unload
+{
+unload() updating;
 
 vars
 
@@ -994,75 +1105,6 @@ begin
 			passenger.staffOrPassenger & Tab & passenger.passportNo & Tab &
 			passenger.nationality & Tab & passenger.address & Tab &
 			passenger.phoneNo.String & Tab & passenger.email;
-end;
-
-}
-
-	)
-	Menu (
-	jadeMethodSources
-load
-{
-load() updating;
-
-vars
-
-begin
-	self.centreWindow();
-end;
-
-}
-
-mnAccntLogin_click
-{
-mnAccntLogin_click(menuItem: MenuItem input) updating;
-
-vars
-	form : FormLogin;
-begin
-	create form transient;
-	form.centreWindow();
-	form.show();
-end;
-
-}
-
-mnuSearch_click
-{
-mnuSearch_click(menuItem: MenuItem input) updating;
-
-vars
-	form : FormFlightSearch;
-begin
-	create form transient;
-	form.centreWindow;
-	form.show();
-end;
-
-}
-
-mnuViewAll_click
-{
-mnuViewAll_click(menuItem: MenuItem input) updating;
-
-vars
-	form : FormFlightView;
-begin
-	create form transient;
-	form.centreWindow();
-	form.show();
-end;
-
-}
-
-unload
-{
-unload() updating;
-
-vars
-
-begin
-
 end;
 
 }
