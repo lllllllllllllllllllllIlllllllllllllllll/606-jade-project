@@ -9,7 +9,7 @@ localeDefinitions
 	1033 "English (United States)" schemaDefaultLocale;
 		setModifiedTimeStamp "user" "20.0.02" 2022:08:17:22:54:09.230;
 	5129 "English (New Zealand)" _cloneOf 1033;
-		setModifiedTimeStamp "<unknown>" "" 2022:11:06:03:20:40;
+		setModifiedTimeStamp "<unknown>" "" 2022:11:06:19:44:17;
 libraryDefinitions
 typeHeaders
 	Airport subclassOf Object highestOrdinal = 4, number = 2070;
