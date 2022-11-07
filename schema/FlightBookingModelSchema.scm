@@ -1,4 +1,4 @@
-/* JADE COMMAND FILE NAME \\sit.inet\SIT\Home\INVStudents\2021002164\GitHub\606-jade-project\schema\FlightBookingModelSchema.jcf */
+/* JADE COMMAND FILE NAME C:\Users\2021005284\OneDrive - Southern Institute of Technology\itc606-jade\project\606-jade-project\schema\FlightBookingModelSchema.jcf */
 jadeVersionNumber "20.0.02";
 schemaDefinition
 FlightBookingModelSchema subschemaOf RootSchema completeDefinition, patchVersioningEnabled = false;
@@ -9,7 +9,7 @@ localeDefinitions
 	1033 "English (United States)" schemaDefaultLocale;
 		setModifiedTimeStamp "user" "20.0.02" 2022:08:17:22:54:09.230;
 	5129 "English (New Zealand)" _cloneOf 1033;
-		setModifiedTimeStamp "<unknown>" "" 2022:11:06:19:44:17;
+		setModifiedTimeStamp "<unknown>" "" 2022:11:07:02:38:51;
 libraryDefinitions
 typeHeaders
 	Account subclassOf Object highestOrdinal = 6, number = 2100;
@@ -206,11 +206,11 @@ typeDefinitions
 		createPassengers() number = 1001;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:04:23:05:50.097;
 		createTest() number = 1004;
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:21:45:33.247;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:07:03:15:51.292;
 		createTickets() number = 1007;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:05:04:07:05.266;
 		deleteTest() number = 1006;
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:20:52:49.301;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:07:03:20:38.636;
 	)
 	Passenger completeDefinition
 	(
@@ -725,6 +725,7 @@ vars
 	flightPath : FlightPath;
 	plane : Plane;
 	passenger : Passenger;
+	ticket : Ticket;
 	
 	date : Date;
 	time : Time;
@@ -785,6 +786,9 @@ begin
 	date.setDate(25, 08, 5);
 	passenger.setPropertiesOnCreate("Mr", "Ryan White", date, "P", "LA285493",
 									"Australia", "14 Straya Street", 152342342, "ryan@gmail.com");
+									
+	create ticket persistent;
+	ticket.setPropertiesOnCreate(passenger, flight, "BT10", true, false, 99.99, date);
 	commitTransaction;
 end;
 
@@ -815,6 +819,7 @@ begin
 	FlightPath.instances.purge();
 	Booking.instances.purge();
 	Plane.instances.purge();
+	Ticket.instances.purge();
 	commitTransaction;
 end;
 

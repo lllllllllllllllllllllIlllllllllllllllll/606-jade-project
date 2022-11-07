@@ -1,4 +1,4 @@
-/* JADE COMMAND FILE NAME \\sit.inet\SIT\Home\INVStudents\2021002164\GitHub\606-jade-project\schema\FlightBookingViewSchema.jcf */
+/* JADE COMMAND FILE NAME C:\Users\2021005284\OneDrive - Southern Institute of Technology\itc606-jade\project\606-jade-project\schema\FlightBookingViewSchema.jcf */
 jadeVersionNumber "20.0.02";
 schemaDefinition
 FlightBookingViewSchema subschemaOf FlightBookingModelSchema completeDefinition, patchVersioningEnabled = false;
@@ -9,7 +9,7 @@ localeDefinitions
 	1033 "English (United States)" schemaDefaultLocale;
 		setModifiedTimeStamp "user" "20.0.02" 2022:08:22:22:36:36.463;
 	5129 "English (New Zealand)" _cloneOf 1033;
-		setModifiedTimeStamp "<unknown>" "" 2022:11:06:21:38:23;
+		setModifiedTimeStamp "<unknown>" "" 2022:11:07:02:39:04;
 libraryDefinitions
 typeHeaders
 	FlightBookingViewSchema subclassOf FlightBookingModelSchema transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2087;
@@ -20,12 +20,12 @@ typeHeaders
 	FormFlightSearch subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 17, number = 2096;
 	FormFlightView subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 10, number = 2090;
 	FormGuest subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 17, number = 2097;
-	FormLogin subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 9, number = 2098;
+	FormLogin subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 10, number = 2098;
 	FormManager subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 19, number = 2099;
-	FormMenu subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 20, number = 2095;
+	FormMenu subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 23, number = 2095;
 	FormPassengerAddEdit subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 30, number = 2086;
 	FormPassengerView subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 7, number = 2082;
-	FormTicketsView subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 5, number = 2058;
+	FormTicketsView subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 6, number = 2058;
  
 membershipDefinitions
  
@@ -176,7 +176,7 @@ typeDefinitions
 	)
 	FormFlightView completeDefinition
 	(
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:22:28:24.550;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:07:03:54:53.860;
 	attributeDefinitions
 		searchDate:                    Date number = 9, ordinal = 10;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:22:05:45.461;
@@ -271,10 +271,10 @@ typeDefinitions
 	)
 	FormLogin completeDefinition
 	(
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:20:37:33.217;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:07:03:53:09.222;
 	referenceDefinitions
-		button4:                       Button  number = 9, ordinal = 9;
-		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:21:42:48.409;
+		btnRegister:                   Button  number = 9, ordinal = 10;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:07:03:12:27.090;
 		buttonGuestLogin:              Button  number = 8, ordinal = 8;
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:21:08:10.263;
 		buttonLogin:                   Button  number = 2, ordinal = 2;
@@ -294,18 +294,23 @@ typeDefinitions
  
 	jadeMethodDefinitions
 		buttonGuestLogin_click(btn: Button input) updating, number = 1003;
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:04:15:36:13.434;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:07:03:05:49.187;
 		buttonLogin_click(btn: Button input) updating, number = 1002;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:06:23:56:54.731;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:07:02:55:31.536;
 		buttonQuit_click(btn: Button input) updating, number = 1001;
 		setModifiedTimeStamp "user" "20.0.02" 2022:08:22:22:45:27.910;
+		gotFocus(cntrl: Control input) updating, number = 1005;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:07:03:01:39.767;
 		load() updating, number = 1004;
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:04:13:11:31.915;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:07:03:02:49.845;
+		reset() number = 1006;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:07:03:02:33.642;
  
 	eventMethodMappings
 		buttonGuestLogin_click = click of Button;
 		buttonLogin_click = click of Button;
 		buttonQuit_click = click of Button;
+		gotFocus = gotFocus of Form;
 		load = load of Form;
 	)
 	FormManager completeDefinition
@@ -333,10 +338,8 @@ typeDefinitions
 	)
 	FormMenu completeDefinition
 	(
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:22:28:35.300;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:07:03:53:17.493;
 	referenceDefinitions
-		mnAccntLogin:                  MenuItem  number = 6, ordinal = 6;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
 		mnuAcceptPayment:              MenuItem  number = 19, ordinal = 19;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:05:04:07:32.730;
 		mnuAccount:                    MenuItem  number = 5, ordinal = 5;
@@ -345,61 +348,59 @@ typeDefinitions
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:21:27:45.101;
 		mnuBackup:                     MenuItem  number = 15, ordinal = 20;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:03:31:22.837;
-		mnuBookFlight:                 MenuItem  number = 12, ordinal = 12;
-		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:21:27:45.101;
-		mnuBooking:                    MenuItem  number = 1, ordinal = 1;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
 		mnuCreatePassenger:            MenuItem  number = 13, ordinal = 13;
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:21:27:45.101;
 		mnuEditDetails:                MenuItem  number = 11, ordinal = 11;
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:21:27:45.101;
-		mnuGuest:                      MenuItem  number = 8, ordinal = 8;
+		mnuFlight:                     MenuItem  number = 8, ordinal = 8;
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:21:27:45.099;
-		mnuManagerBooking:             MenuItem  number = 3, ordinal = 3;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
+		mnuLogin:                      MenuItem  number = 1, ordinal = 22;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:07:03:37:56.158;
+		mnuManager:                    MenuItem  number = 16, ordinal = 21;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:07:02:48:13.405;
 		mnuSearch:                     MenuItem  number = 9, ordinal = 9;
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:21:27:45.101;
+		mnuTestData:                   MenuItem  number = 2, ordinal = 23;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:07:03:37:56.158;
 		mnuViewAll:                    MenuItem  number = 10, ordinal = 10;
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:03:21:27:45.101;
 		mnuacctLogout:                 MenuItem  number = 7, ordinal = 7;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
-		mnuadminbooking:               MenuItem  number = 4, ordinal = 4;
-		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
-		mnuguestbooking:               MenuItem  number = 2, ordinal = 2;
 		setModifiedTimeStamp "2021002164" "20.0.02" 2022:11:01:21:22:14.048;
  
 	jadeMethodDefinitions
 		load() updating, number = 1005;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:19:57:55.711;
-		mnAccntLogin_click(menuItem: MenuItem input) updating, number = 1001;
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:04:13:19:06.800;
+		loadLogin() updating, number = 1012;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:07:03:46:54.121;
 		mnuAcceptPayment_click(menuItem: MenuItem input) updating, number = 1008;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:19:59:49.570;
 		mnuBackup_click(menuItem: MenuItem input) updating, number = 1006;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:03:55:00.021;
-		mnuBookFlight_click(menuItem: MenuItem input) updating, number = 1010;
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:20:22:05.033;
 		mnuCreatePassenger_click(menuItem: MenuItem input) updating, number = 1007;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:19:52:17.572;
 		mnuEditDetails_click(menuItem: MenuItem input) updating, number = 1009;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:20:21:07.611;
+		mnuLogin_click(menuItem: MenuItem input) updating, number = 1011;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:07:03:48:24.050;
 		mnuSearch_click(menuItem: MenuItem input) updating, number = 1002;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:05:02:58:47.977;
 		mnuViewAll_click(menuItem: MenuItem input) updating, number = 1004;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:05:02:58:32.070;
+		mnuacctLogout_click(menuItem: MenuItem input) updating, number = 1001;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:07:03:07:42.608;
 		unload() updating, number = 1003;
 		setModifiedTimeStamp "user" "20.0.02" 2022:11:04:02:52:42.080;
  
 	eventMethodMappings
 		load = load of Form;
-		mnAccntLogin_click = click of MenuItem;
 		mnuAcceptPayment_click = click of MenuItem;
 		mnuBackup_click = click of MenuItem;
-		mnuBookFlight_click = click of MenuItem;
 		mnuCreatePassenger_click = click of MenuItem;
 		mnuEditDetails_click = click of MenuItem;
+		mnuLogin_click = click of MenuItem;
 		mnuSearch_click = click of MenuItem;
 		mnuViewAll_click = click of MenuItem;
+		mnuacctLogout_click = click of MenuItem;
 		unload = unload of Form;
 	)
 	FormPassengerAddEdit completeDefinition
@@ -539,22 +540,30 @@ typeDefinitions
 	)
 	FormTicketsView completeDefinition
 	(
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:20:48:06.792;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:07:03:53:15.886;
 	referenceDefinitions
+		btnDeclined:                   Button  number = 2, ordinal = 6;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:07:03:32:39.486;
 		buttonGoback:                  Button  number = 5, ordinal = 5;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:20:29:01.578;
-		buttonPayment:                 Button  number = 4, ordinal = 4;
+		buttonVerified:                Button  number = 4, ordinal = 4;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:05:04:08:02.953;
 		label1:                        Label  number = 1, ordinal = 1;
-		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:05:04:08:02.953;
-		label2:                        Label  number = 2, ordinal = 2;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:05:04:08:02.953;
 		tableTickets:                  Table  number = 3, ordinal = 3;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:05:04:08:02.953;
  
 	jadeMethodDefinitions
+		btnDeclined_click(btn: Button input) updating, number = 1006;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:07:03:34:59.424;
 		buttonGoback_click(btn: Button input) updating, number = 1002;
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:20:29:15.156;
+		buttonVerified_click(btn: Button input) updating, number = 1005;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:07:03:35:18.158;
+		load() updating, number = 1003;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:07:03:19:38.509;
+		loadTickets() number = 1004;
+		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:07:03:17:57.885;
 		tableTickets_displayRow(
 			table: Table input; 
 			theSheet: Integer; 
@@ -564,7 +573,10 @@ typeDefinitions
 		setModifiedTimeStamp "2021005284" "20.0.02" 2022:11:06:20:15:36.644;
  
 	eventMethodMappings
+		btnDeclined_click = click of Button;
 		buttonGoback_click = click of Button;
+		buttonVerified_click = click of Button;
+		load = load of Form;
 		tableTickets_displayRow = displayRow of Table;
 	)
  
@@ -829,8 +841,9 @@ buttonGuestLogin_click
 buttonGuestLogin_click(btn: Button input) updating;
 
 vars
-	form : FormGuest;
+	form : FormMenu;
 begin
+	self.unloadForm();
 	create form transient;
 	form.centreWindow();
 	form.show();
@@ -845,46 +858,20 @@ buttonLogin_click
 buttonLogin_click(btn: Button input) updating;
 
 vars
-	formLogin : FormLogin;
-	formGuest : FormGuest;
-	formManager : FormManager;
-	formAdmin : FormAdmin;
-	account : Account;
+	form : FormMenu;
 begin
-	if textBoxUsername.text = "guest" then
-		create formGuest transient;
-		formGuest.show();
-		delete self;
-	elseif textBoxUsername.text = "manager" then
-		create formManager transient;
-		formManager.show();
-		delete self;
-	elseif textBoxUsername.text = "admin" then
-		create formAdmin transient;
-		formAdmin.show();
-		delete self;
-	elseif textBoxUsername.text = account.accountName then
-		if textBoxPassword.text = account.accountPassword then
-			if account.accountAccessLevel=0 then
-				create formAdmin transient;
-				formAdmin.show();
-				delete self;
-			elseif account.accountAccessLevel=1 then 
-				create formManager transient;
-				formManager.show();
-				delete self;
-			elseif account.accountAccessLevel=2 then
-				create formGuest transient;
-				formManager.show();
-				delete self;
-			else
-//				("ERROR ACCESS LEVEL NOT WITHIN RANGE", "ERROR", MsgBox_OK_Only);
-				delete self;
-			endif;
-		else
-				delete self;
-		endif;
+	if textBoxUsername.text = "passenger" and textBoxPassword.text = "password" then
+		app.userSecurityLevel := 1;
+	elseif textBoxUsername.text = "manager" and textBoxPassword.text = "password" then
+		app.userSecurityLevel := 2;
+	elseif textBoxUsername.text = "admin" and textBoxPassword.text = "password" then
+		app.userSecurityLevel := 3;
 	endif;
+epilog
+	self.unloadForm();
+	create form transient;
+	form.show();
+	delete self;
 end;
 
 }
@@ -901,6 +888,18 @@ end;
 
 }
 
+gotFocus
+{
+gotFocus(cntrl: Control input) updating;
+
+vars
+
+begin
+
+end;
+
+}
+
 load
 {
 load() updating;
@@ -908,7 +907,20 @@ load() updating;
 vars
 
 begin
+	self.reset();
+end;
 
+}
+
+reset
+{
+reset();
+
+vars
+
+begin
+	// reset privilege
+	app.userSecurityLevel := 0;
 end;
 
 }
@@ -937,16 +949,19 @@ end;
 
 }
 
-mnAccntLogin_click
+loadLogin
 {
-mnAccntLogin_click(menuItem: MenuItem input) updating;
+loadLogin() updating;
 
 vars
 	form : FormLogin;
 begin
+	self.unloadForm();
 	create form transient;
 	form.centreWindow();
 	form.show();
+epilog
+	delete self;
 end;
 
 }
@@ -973,19 +988,6 @@ vars
 begin
 	create form;
 	form.showModal();
-end;
-
-}
-
-mnuBookFlight_click
-{
-mnuBookFlight_click(menuItem: MenuItem input) updating;
-
-vars
-	form : FormFlightView;
-begin
-	create form transient;
-	form.show();
 end;
 
 }
@@ -1017,6 +1019,27 @@ end;
 
 }
 
+mnuLogin_click
+{
+mnuLogin_click(menuItem: MenuItem input) updating;
+
+vars
+	form : FormLogin;
+	check : Integer;
+begin
+	if app.userSecurityLevel > 0 then
+		check := app.msgBox("Login to different account?", "Warning", MsgBox_OK_Cancel);
+	else
+		loadLogin();
+	endif;
+	
+	if check = MsgBox_Return_OK then
+		loadLogin();
+	endif;
+end;
+
+}
+
 mnuSearch_click
 {
 mnuSearch_click(menuItem: MenuItem input) updating;
@@ -1041,6 +1064,23 @@ begin
 	create form transient;
 	form.centreWindow();
 	form.show();
+end;
+
+}
+
+mnuacctLogout_click
+{
+mnuacctLogout_click(menuItem: MenuItem input) updating;
+
+vars
+	form : FormLogin;
+begin
+	self.unloadForm();
+	create form transient;
+	form.centreWindow();
+	form.show();
+epilog
+	delete self;
 end;
 
 }
@@ -1395,6 +1435,28 @@ end;
 	)
 	FormTicketsView (
 	jadeMethodSources
+btnDeclined_click
+{
+btnDeclined_click(btn: Button input) updating;
+
+vars
+	ticket : Ticket;
+begin
+	ticket := tableTickets.accessRow(tableTickets.row).itemObject.Ticket;
+	if ticket = null then
+		app.msgBox("Select a ticket", "Error", null);
+		return;
+	endif;
+	
+	beginTransaction;
+	ticket.setPropertiesOnCreate(ticket.passenger, ticket.flight, ticket.seatNo, ticket.baggage,
+									false, ticket.price, ticket.date);
+	commitTransaction;
+	self.load();
+end;
+
+}
+
 buttonGoback_click
 {
 buttonGoback_click(btn: Button input) updating;
@@ -1405,6 +1467,61 @@ begin
 
 epilog
 	delete self;
+end;
+
+}
+
+buttonVerified_click
+{
+buttonVerified_click(btn: Button input) updating;
+
+vars
+	ticket : Ticket;
+begin
+	ticket := tableTickets.accessRow(tableTickets.row).itemObject.Ticket;
+	if ticket = null then
+		app.msgBox("Select a ticket", "Error", null);
+		return;
+	endif;
+	
+	
+	beginTransaction;
+	ticket.setPropertiesOnCreate(ticket.passenger, ticket.flight, ticket.seatNo, ticket.baggage,
+									true, ticket.price, ticket.date);
+	commitTransaction;
+	self.load();
+end;
+
+}
+
+load
+{
+load() updating;
+
+vars
+
+begin
+	tableTickets.setCellText(1, 1, "Date" & Tab & "Time" & Tab & "Passenger Name" & Tab &
+								"From" & Tab & "To" & Tab & "SeatNo" & Tab & "Baggage" & Tab &
+								"Price" & Tab & "Paid");
+								
+	loadTickets();
+end;
+
+}
+
+loadTickets
+{
+loadTickets();
+
+vars
+
+begin
+	app.initialize();
+	if not app.myBooking.allTicketsById = null then
+		tableTickets.displayCollection(app.myBooking.allTicketsById, true,
+										Table.DisplayCollection_Forward, null);
+	endif;
 end;
 
 }
